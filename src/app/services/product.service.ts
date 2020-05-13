@@ -12,10 +12,13 @@ export class ProductService {
 
   constructor(private db: AngularFireDatabase) {}
 
-  getProducts(start: number, offset: number): Observable<any> {
+  getProducts(key: any, offset: number): Observable<any> {
     return this.db
       .list(this.dbKey, (response) =>
-        response.orderByChild('id').startAt(start).limitToLast(offset)
+        response
+          .orderByKey()
+          .startAt(key)
+          .limitToFirst(offset + 1)
       )
       .valueChanges();
   }

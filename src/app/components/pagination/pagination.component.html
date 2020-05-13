@@ -1,0 +1,19 @@
+<div *ngIf="items.length > 0">
+  <button
+    (click)="prevPage()"
+    type="button"
+    class="btn btn-outline-primary"
+    [disabled]="prevKeys.length === 0"
+  >
+    Prev
+  </button>
+
+  <button
+    (click)="nextPage()"
+    type="button"
+    class="btn btn-outline-primary"
+    [disabled]="!nextKey"
+  >
+    Next
+  </button>
+</div>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { catchError, map } from 'rxjs/operators';
 import { Product } from 'src/app/models/product';
 import { ErrorService } from 'src/app/services/error.service';
 import { ProductService } from 'src/app/services/product.service';
@@ -18,18 +17,16 @@ export class ProductListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.initialize();
+    this.init();
   }
 
-  private initialize() {
-    this.productService
-      .getProducts(0, 3)
-      .pipe(
-        map(this.errorService.detectGenericError),
-        catchError(this.errorService.handleGenericError)
-      )
-      .subscribe((response) => {
-        this.products = response;
-      });
+  updateProducts(event) {
+    this.products = event;
   }
+
+  requestPage = (key: number, offset: number) => {
+    return this.productService.getProducts(key, offset);
+  };
+
+  private init() {}
 }

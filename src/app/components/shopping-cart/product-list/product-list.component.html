@@ -3,3 +3,10 @@
     <app-product-item [product]="product"></app-product-item>
   </div>
 </div>
+<div class="paginationContainer">
+  <app-pagination
+    [offset]="3"
+    [requestPage]="requestPage"
+    (appChangeValue)="updateProducts($event)"
+  ></app-pagination>
+</div>
