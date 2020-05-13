@@ -26,3 +26,15 @@
 .product-btn {
   font-size: small;
 }
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+.dialog-panel .mat-dialog-container {
+  padding: 0px;
+}

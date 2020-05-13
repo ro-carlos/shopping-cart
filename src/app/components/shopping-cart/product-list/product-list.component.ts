@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { catchError, map } from 'rxjs/operators';
+import { Product } from 'src/app/models/product';
+import { ErrorService } from 'src/app/services/error.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -6,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  items = [1, 2, 3, 4];
+  products: Array<Product> = [];
 
-  constructor() {}
+  constructor(
+    private productService: ProductService,
+    private popupService: ErrorService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.initialize();
+  }
+
+  private initialize() {
+    this.productService
+      .getProducts()
+      .pipe(
+        map(this.popupService.detectGenericError),
+        catchError(this.popupService.handleGenericError)
+      )
+      .subscribe((response) => {
+        this.products = response;
+      });
+  }
 }

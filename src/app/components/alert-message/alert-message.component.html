@@ -1,0 +1,19 @@
+<div class="mainContainer">
+  <div class="body">
+    <div class="imageContainer">
+      <img [src]="icono" />
+    </div>
+    <label class="title">
+      {{ data.error?.value }}
+    </label>
+  </div>
+</div>
+
+<ng-container>
+  <div class="buttonsContainer" [ngStyle]="{ 'background-color': color }">
+    <label class="botones line" color="secondary" (click)="cancel()"
+      >Cancel</label
+    >
+    <label class="botones" color="secondary" (click)="accept()">Accept</label>
+  </div>
+</ng-container>
