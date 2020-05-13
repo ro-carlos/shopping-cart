@@ -23,6 +23,7 @@ import { FiltersComponent } from './components/shopping-cart/filters/filters.com
 import { ProductItemComponent } from './components/shopping-cart/product-list/product-item/product-item.component';
 import { ProductListComponent } from './components/shopping-cart/product-list/product-list.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 const angular_material = [
   MatDialogModule,
@@ -44,6 +45,7 @@ const angular_material = [
     CartItemComponent,
     ProductItemComponent,
     AlertMessageComponent,
+    PaginationComponent,
   ],
   entryComponents: [AlertMessageComponent],
   imports: [
