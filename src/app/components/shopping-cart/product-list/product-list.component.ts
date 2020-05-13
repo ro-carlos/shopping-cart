@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private popupService: ErrorService
+    private errorService: ErrorService
   ) {}
 
   ngOnInit() {
@@ -25,8 +25,8 @@ export class ProductListComponent implements OnInit {
     this.productService
       .getProducts()
       .pipe(
-        map(this.popupService.detectGenericError),
-        catchError(this.popupService.handleGenericError)
+        map(this.errorService.detectGenericError),
+        catchError(this.errorService.handleGenericError)
       )
       .subscribe((response) => {
         this.products = response;
