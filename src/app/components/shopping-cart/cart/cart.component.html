@@ -1,9 +1,12 @@
 <ul class="list-group">
-  <li *ngFor="let item of items" class="list-group-item">
-    <app-cart-item></app-cart-item>
+  <li
+    *ngFor="let recipent of cartService.cart | keyvalue"
+    class="list-group-item"
+  >
+    <app-cart-item [purchase]="recipent.value"></app-cart-item>
   </li>
 
   <li *ngIf="items > 0" class="list-group-item active">
-    <strong>Total</strong> {{ 1100 | currency: 'USD' }}
+    <strong>Total</strong> {{ cartService.total | currency: 'USD' }}
   </li>
 </ul>

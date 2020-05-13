@@ -14,7 +14,12 @@
     <a class="p-2 text-dark" href="#">Account</a>
   </nav>
   <div class="box logo">
-    <h5 class="my-0 mr-md-auto font-weight-normal">3</h5>
+    <h5
+      *ngIf="cartService.totalProducts > 0"
+      class="my-0 mr-md-auto font-weight-normal"
+    >
+      {{ cartService.totalProducts }}
+    </h5>
     <img src="assets/icons/cart.png" />
   </div>
   <!-- <a class="btn btn-outline-primary" href="#">Sign up</a> -->
