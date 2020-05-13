@@ -23,7 +23,7 @@ export class ProductListComponent implements OnInit {
 
   private initialize() {
     this.productService
-      .getProducts()
+      .getProducts(0, 3)
       .pipe(
         map(this.errorService.detectGenericError),
         catchError(this.errorService.handleGenericError)
