@@ -32,15 +32,15 @@ export class AlertMessageComponent {
     if (this.data.error) {
       switch (this.data.error.severity) {
         case 0:
-          return 'assets/iconsAlerts/info.png';
+          return 'assets/icons/info.png';
         case 1:
-          return 'assets/iconsAlerts/warning.png';
+          return 'assets/icons/warning.png';
         case 2:
-          return 'assets/iconsAlerts/error.png';
+          return 'assets/icons/error.png';
         case 3:
-          return 'assets/iconsAlerts/confirmation.png';
+          return 'assets/icons/confirmation.png';
         case 4:
-          return 'assets/iconsAlerts/success.png';
+          return 'assets/icons/success.png';
       }
     }
   }

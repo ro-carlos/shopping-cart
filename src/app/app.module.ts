@@ -18,7 +18,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlertMessageComponent } from './components/alert-message/alert-message.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { CartItemComponent } from './components/shopping-cart/cart/cart-item/cart-item.component';
@@ -38,7 +37,6 @@ const angular_material = [
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     FooterComponent,
     NavComponent,
     ShoppingCartComponent,
