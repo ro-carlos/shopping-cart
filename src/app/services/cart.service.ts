@@ -41,7 +41,7 @@ export class CartService {
     } else {
       this.cart.delete(product.id);
     }
-    this.selectedPurchase = null;
+    // this.selectedPurchase = null;
     this.totalPurchase -= product.price;
     this.totalProducts -= 1;
   }
@@ -54,13 +54,20 @@ export class CartService {
     this.presentingModal = true;
     const dialogRef = this.dialog.open(CartModalComponent, {
       id: 'modal-component',
+      maxHeight: '700px',
       height: '350px',
-      width: '600px',
+      width: '400px',
+      data: {
+        cart: this.cart,
+        totalProducts: this.totalProducts,
+        totalPurchase: this.totalPurchase,
+      },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed', result);
       this.presentingModal = false;
+      this.removeSelectedPurchase();
     });
   }
 }

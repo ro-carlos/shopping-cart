@@ -1,26 +1,27 @@
-<!-- <ul class="list-group">
-  <li
-    *ngFor="let recipent of cartService.cart | keyvalue"
-    class="list-group-item"
-  >
-    <app-modal-cart-item [purchase]="recipent.value"></app-modal-cart-item>
-  </li>
-
-  <li *ngIf="cartService.totalProducts > 0" class="list-group-item active">
-    <strong>Total</strong> {{ cartService.totalPurchase | currency: 'USD' }}
-  </li>
-</ul> -->
-
 <div id="modal-content-wrapper">
   <header id="modal-header">
-    <h1 id="modal-title">Are you sure you want to logout?</h1>
+    <h1 id="modal-title">Cart Review</h1>
   </header>
   <section id="modal-body">
-    <p>
-      If you logout bad things might happen, but don't mind me, I'm just the
-      description in a modal...
-    </p>
+    <ul class="list-group">
+      <li *ngFor="let recipent of cart | keyvalue" class="list-group-item">
+        <app-modal-cart-item
+          [purchase]="recipent.value"
+          (changeCart)="onChangeCart($event)"
+          (changeTotalProducts)="onChangeTotalProducts($event)"
+          (changeTotalPurchase)="onChangeTotalPurchase($event)"
+        ></app-modal-cart-item>
+      </li>
+
+      <li *ngIf="totalProducts > 0" class="list-group-item active">
+        <strong>Total</strong>
+        <label class="right">
+          {{ totalPurchase | currency: 'USD' }}
+        </label>
+      </li>
+    </ul>
   </section>
+  <br />
   <footer id="modal-footer">
     <button
       mat-raised-button

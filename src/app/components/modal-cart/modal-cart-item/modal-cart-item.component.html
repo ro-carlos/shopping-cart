@@ -1,9 +1,6 @@
 <div class="card-item">
-  <span>{{ purchase.product?.name }}</span> x
-  <span>{{ purchase.quantity }}</span
-  >:
-  <strong>{{ purchase.product?.price | currency: 'USD' }}</strong>
-
+  <strong>{{ purchase.product?.name }}</strong> x
+  <span>{{ purchase.quantity }}</span>
   <label
     class="botones"
     color="secondary"
@@ -29,4 +26,7 @@
       />
     </svg>
   </label>
+  <strong class="price right">{{
+    purchase.product?.price | currency: 'USD'
+  }}</strong>
 </div>
