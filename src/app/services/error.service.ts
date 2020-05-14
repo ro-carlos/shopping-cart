@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { throwError } from 'rxjs';
-import { AlertMessageComponent } from '../components/alert-message/alert-message.component';
+import { AlertModalMessageComponent } from '../components/modal-message/modal-message.component';
 import { BackendError } from '../models/backend-error';
 import { LoadingService } from './loading.service';
 
@@ -35,7 +35,7 @@ export class ErrorService {
 
   private displayModal(error: BackendError, cancelAction?, acceptOpcion?) {
     this.presentingModal = true;
-    const dialogRef = this.dialog.open(AlertMessageComponent, {
+    const dialogRef = this.dialog.open(AlertModalMessageComponent, {
       width: '350px',
       panelClass: 'dialog-panel',
       data: { error, cancelAction, acceptOpcion },

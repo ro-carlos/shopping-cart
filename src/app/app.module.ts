@@ -16,13 +16,13 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AlertMessageComponent } from './components/alert-message/alert-message.component';
+import { CartPreviewComponent } from './components/cart-preview/cart-preview.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ModalCartItemComponent } from './components/modal-cart/modal-cart-item/modal-cart-item.component';
+import { CartModalComponent } from './components/modal-cart/modal-cart.component';
+import { AlertModalMessageComponent } from './components/modal-message/modal-message.component';
 import { NavComponent } from './components/nav/nav.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
-import { CartPreviewComponent } from './components/shopping-cart/cart-preview/cart-preview.component';
-import { CartItemComponent } from './components/shopping-cart/cart/cart-item/cart-item.component';
-import { CartComponent } from './components/shopping-cart/cart/cart.component';
 import { FiltersComponent } from './components/shopping-cart/filters/filters.component';
 import { ProductItemComponent } from './components/shopping-cart/product-list/product-item/product-item.component';
 import { ProductListComponent } from './components/shopping-cart/product-list/product-list.component';
@@ -43,14 +43,14 @@ const angular_material = [
     ShoppingCartComponent,
     FiltersComponent,
     ProductListComponent,
-    CartComponent,
-    CartItemComponent,
+    CartModalComponent,
+    ModalCartItemComponent,
     ProductItemComponent,
-    AlertMessageComponent,
+    AlertModalMessageComponent,
     PaginationComponent,
     CartPreviewComponent,
   ],
-  entryComponents: [AlertMessageComponent, CartComponent],
+  entryComponents: [AlertModalMessageComponent, CartModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

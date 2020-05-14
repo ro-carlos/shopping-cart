@@ -2,13 +2,13 @@ import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-alert-message',
-  templateUrl: './alert-message.component.html',
-  styleUrls: ['./alert-message.component.scss'],
+  selector: 'app-modal-message',
+  templateUrl: './modal-message.component.html',
+  styleUrls: ['./modal-message.component.scss'],
 })
-export class AlertMessageComponent {
+export class AlertModalMessageComponent {
   constructor(
-    public dialogRef: MatDialogRef<AlertMessageComponent>,
+    public dialogRef: MatDialogRef<AlertModalMessageComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CartComponent } from '../components/shopping-cart/cart/cart.component';
+import { CartModalComponent } from '../components/modal-cart/modal-cart.component';
 import { Product } from '../models/product';
 import { Purchase } from '../models/purchase';
 
@@ -52,7 +52,7 @@ export class CartService {
 
   displayModal() {
     this.presentingModal = true;
-    const dialogRef = this.dialog.open(CartComponent, {
+    const dialogRef = this.dialog.open(CartModalComponent, {
       id: 'modal-component',
       height: '350px',
       width: '600px',
