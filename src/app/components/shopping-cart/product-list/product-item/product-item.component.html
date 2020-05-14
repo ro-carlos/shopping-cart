@@ -5,10 +5,10 @@
     src="{{ product.imageURL }}"
   />
   <div class="card-body">
-    <p class="card-text">
+    <strong class="card-text">
       {{ product.name }}
-    </p>
-    <p class="card-text">
+    </strong>
+    <p class="card-text price">
       <strong> {{ product.price | currency: 'USD' }} </strong>
     </p>
     <p class="card-text">

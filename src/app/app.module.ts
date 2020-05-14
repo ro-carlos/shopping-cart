@@ -20,6 +20,7 @@ import { AlertMessageComponent } from './components/alert-message/alert-message.
 import { FooterComponent } from './components/footer/footer.component';
 import { NavComponent } from './components/nav/nav.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { CartPreviewComponent } from './components/shopping-cart/cart-preview/cart-preview.component';
 import { CartItemComponent } from './components/shopping-cart/cart/cart-item/cart-item.component';
 import { CartComponent } from './components/shopping-cart/cart/cart.component';
 import { FiltersComponent } from './components/shopping-cart/filters/filters.component';
@@ -47,6 +48,7 @@ const angular_material = [
     ProductItemComponent,
     AlertMessageComponent,
     PaginationComponent,
+    CartPreviewComponent,
   ],
   entryComponents: [AlertMessageComponent],
   imports: [

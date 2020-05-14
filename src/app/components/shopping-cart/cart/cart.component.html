@@ -6,7 +6,7 @@
     <app-cart-item [purchase]="recipent.value"></app-cart-item>
   </li>
 
-  <li *ngIf="items > 0" class="list-group-item active">
-    <strong>Total</strong> {{ cartService.total | currency: 'USD' }}
+  <li *ngIf="cartService.totalProducts > 0" class="list-group-item active">
+    <strong>Total</strong> {{ cartService.totalPurchase | currency: 'USD' }}
   </li>
 </ul>

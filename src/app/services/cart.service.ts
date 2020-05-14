@@ -10,15 +10,18 @@ export class CartService {
   cart = new Map<string, Purchase>();
   totalPurchase = 0;
   totalProducts = 0;
+  selectedPurchase: Purchase;
 
   addProduct(product: Product) {
-    const purchase: Purchase = this.cart.get(product.id);
+    let purchase: Purchase = this.cart.get(product.id);
     if (purchase) {
       purchase.quantity += 1;
       this.cart.set(product.id, purchase);
     } else {
-      this.cart.set(product.id, new Purchase(product, 1));
+      purchase = new Purchase(product, 1);
+      this.cart.set(product.id, purchase);
     }
+    this.selectedPurchase = purchase;
     this.totalPurchase += product.price;
     this.totalProducts += 1;
   }
@@ -32,7 +35,12 @@ export class CartService {
     } else {
       this.cart.delete(product.id);
     }
+    this.selectedPurchase = null;
     this.totalPurchase -= product.price;
     this.totalProducts -= 1;
+  }
+
+  removeSelectedPurchase() {
+    this.selectedPurchase = null;
   }
 }

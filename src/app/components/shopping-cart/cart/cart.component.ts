@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Purchase } from 'src/app/models/purchase';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -9,8 +8,4 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent {
   constructor(public cartService: CartService) {}
-
-  getKeys(map: Map<string, Purchase>) {
-    return Array.from(map.keys());
-  }
 }

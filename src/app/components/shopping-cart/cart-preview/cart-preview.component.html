@@ -1,0 +1,33 @@
+<div *ngIf="cartService.selectedPurchase" class="row cartPreviewContainer">
+  <div class="col-md-4 product">
+    <strong>{{ cartService.selectedPurchase?.product?.name }}</strong>
+    <img
+      class="imageContainer"
+      width="100%"
+      src="{{ cartService.selectedPurchase?.product?.imageURL }}"
+    />
+    <strong>Added to Cart</strong>
+  </div>
+  <div class="col-md-6 subtotal">
+    <strong>Cart Subtotal</strong>
+    <span>({{ cartService.totalProducts }}</span> Items)
+    <strong class="price">{{
+      cartService.totalPurchase | currency: 'USD'
+    }}</strong>
+  </div>
+  <div class="col-md-1 subtotal">
+    <button type="button" class="btn btn-primary">Cart</button>
+  </div>
+
+  <div class="col-md-1 button">
+    <label
+      class="botones"
+      color="secondary"
+      onmouseover=""
+      style="cursor: pointer;"
+      (click)="onClickRemoveSelectedPurchase()"
+    >
+      <img width="100%" src="assets/icons/close.png" />
+    </label>
+  </div>
+</div>
