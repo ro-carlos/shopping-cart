@@ -50,7 +50,7 @@ const angular_material = [
     PaginationComponent,
     CartPreviewComponent,
   ],
-  entryComponents: [AlertMessageComponent],
+  entryComponents: [AlertMessageComponent, CartComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

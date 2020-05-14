@@ -9,7 +9,7 @@ import { LoadingService } from './loading.service';
   providedIn: 'root',
 })
 export class ErrorService {
-  public presenting = false;
+  private presentingModal = false;
 
   constructor(
     private loadingService: LoadingService,
@@ -28,23 +28,22 @@ export class ErrorService {
 
   handleGenericError = (error: BackendError) => {
     error.errorCode = error.errorCode ? error.errorCode : '001';
-    this.displayMessage(error);
+    this.displayModal(error);
     this.loadingService.dismiss();
     return throwError(error);
   };
 
-  private displayMessage(error: BackendError, cancelAction?, acceptOpcion?) {
-    this.presenting = true;
+  private displayModal(error: BackendError, cancelAction?, acceptOpcion?) {
+    this.presentingModal = true;
     const dialogRef = this.dialog.open(AlertMessageComponent, {
       width: '350px',
-      // backdropClass: 'custom-dialog-backdrop-class',
       panelClass: 'dialog-panel',
       data: { error, cancelAction, acceptOpcion },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed', result);
-      this.presenting = false;
+      this.presentingModal = false;
     });
   }
 }

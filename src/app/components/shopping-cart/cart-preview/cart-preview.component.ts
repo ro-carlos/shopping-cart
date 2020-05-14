@@ -12,4 +12,8 @@ export class CartPreviewComponent {
   onClickRemoveSelectedPurchase() {
     this.cartService.removeSelectedPurchase();
   }
+
+  onClickCart() {
+    this.cartService.displayModal();
+  }
 }

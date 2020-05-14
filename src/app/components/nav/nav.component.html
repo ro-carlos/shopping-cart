@@ -2,7 +2,7 @@
   class="navContainer d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
 >
   <h5 class="my-0 mr-md-auto font-weight-normal">My Shopping</h5>
-  <form class="form-inline">
+  <form class="form-inline searchbar">
     <input
       class="form-control mr-sm-2"
       type="search"
@@ -10,17 +10,19 @@
       aria-label="Search"
     />
   </form>
-  <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" href="#">Account</a>
-  </nav>
-  <div class="box logo">
-    <h5
-      *ngIf="cartService.totalProducts > 0"
-      class="my-0 mr-md-auto font-weight-normal"
-    >
-      {{ cartService.totalProducts }}
-    </h5>
-    <img src="assets/icons/cart.png" />
+
+  <div
+    class="row"
+    onmouseover=""
+    style="cursor: pointer;"
+    (click)="onClickCart()"
+  >
+    <div class="box logo">
+      <h5 class="my-0 mr-md-auto font-weight-normal">
+        {{ cartService.totalProducts }}
+      </h5>
+      <img src="assets/icons/cart.png" />
+    </div>
+    <a class="p-2 text-dark">Cart</a>
   </div>
-  <!-- <a class="btn btn-outline-primary" href="#">Sign up</a> -->
 </div>

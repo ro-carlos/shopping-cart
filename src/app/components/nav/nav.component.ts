@@ -8,4 +8,8 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class NavComponent {
   constructor(public cartService: CartService) {}
+
+  onClickCart() {
+    this.cartService.displayModal();
+  }
 }

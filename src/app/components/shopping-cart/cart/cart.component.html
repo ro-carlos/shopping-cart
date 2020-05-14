@@ -1,4 +1,4 @@
-<ul class="list-group">
+<!-- <ul class="list-group">
   <li
     *ngFor="let recipent of cartService.cart | keyvalue"
     class="list-group-item"
@@ -9,4 +9,34 @@
   <li *ngIf="cartService.totalProducts > 0" class="list-group-item active">
     <strong>Total</strong> {{ cartService.totalPurchase | currency: 'USD' }}
   </li>
-</ul>
+</ul> -->
+
+<div id="modal-content-wrapper">
+  <header id="modal-header">
+    <h1 id="modal-title">Are you sure you want to logout?</h1>
+  </header>
+  <section id="modal-body">
+    <p>
+      If you logout bad things might happen, but don't mind me, I'm just the
+      description in a modal...
+    </p>
+  </section>
+  <footer id="modal-footer">
+    <button
+      mat-raised-button
+      id="modal-cancel-button"
+      class="btn btn-outline-secondary"
+      (click)="closeModal()"
+    >
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      id="modal-action-button"
+      class="btn btn-primary"
+      (click)="actionFunction()"
+    >
+      Checkout
+    </button>
+  </footer>
+</div>

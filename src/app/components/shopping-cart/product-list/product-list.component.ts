@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductListComponent {
   products: Array<Product> = [];
-  offset = 3;
+  offset = 6;
 
   constructor(private productService: ProductService) {}
 

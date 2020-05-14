@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CartService } from 'src/app/services/cart.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-cart',
@@ -7,5 +7,13 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent {
-  constructor(public cartService: CartService) {}
+  constructor(public dialogRef: MatDialogRef<CartComponent>) {}
+
+  actionFunction() {
+    this.closeModal();
+  }
+
+  closeModal() {
+    this.dialogRef.close();
+  }
 }
